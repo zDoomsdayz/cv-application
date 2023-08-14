@@ -45,7 +45,7 @@ export default function Education({ education, setEducation }) {
   }
 
   return (
-    <>
+    <div className="section">
       <h3>Education</h3>
       {showMenu ? (
         <form onSubmit={handleAdd}>
@@ -59,20 +59,21 @@ export default function Education({ education, setEducation }) {
               </div>
             );
           })}
-
-          <button type="submit">Save</button>
-          <button type="button" onClick={(e) => setShowMenu(false)}>
-            Back
-          </button>
+          <div className="qol">
+            <button type="submit">Save</button>
+            <button type="button" onClick={(e) => setShowMenu(false)}>
+              Back
+            </button>
+          </div>
         </form>
       ) : (
         <>
           <ItemList itemList={education} handleEdit={handleEdit} handleDelete={handleDelete} />
-          <button type="button" onClick={(e) => setShowMenu(true)}>
+          <button type="button" className="addBtn" onClick={(e) => setShowMenu(true)}>
             Add
           </button>
         </>
       )}
-    </>
+    </div>
   );
 }

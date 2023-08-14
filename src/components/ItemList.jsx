@@ -1,14 +1,19 @@
 import { useState } from "react";
+import saveIcon from "../assets/save.png";
+import addIcon from "../assets/add.png";
+import cancelIcon from "../assets/cancel.png";
+import deleteIcon from "../assets/delete.png";
+import editIcon from "../assets/edit.png";
 
 export default function ItemList({ itemList, handleEdit, handleDelete }) {
   return (
-    <ul>
+    <div className="itemContainer">
       {itemList.map((item) => (
-        <li key={item.key}>
+        <div key={item.key}>
           <Item item={item} handleEdit={handleEdit} handleDelete={handleDelete} />
-        </li>
+        </div>
       ))}
-    </ul>
+    </div>
   );
 }
 
@@ -35,7 +40,7 @@ function Item({ item, handleEdit, handleDelete }) {
   }
 
   return (
-    <div>
+    <div className="item">
       {isEditing ? (
         <form onSubmit={handleSubmit}>
           {Object.keys(updatedItem).map(
@@ -49,19 +54,23 @@ function Item({ item, handleEdit, handleDelete }) {
                 </div>
               )
           )}
-          <button type="button" onClick={() => setIsEditing(false)}>
-            Cancel
-          </button>
-          <button type="submit">Save</button>
-          <button type="button" onClick={() => handleDelete(item.key)}>
-            Delete
-          </button>
+          <div className="buttonContainer">
+            <button type="button" onClick={() => setIsEditing(false)}>
+              <img src={cancelIcon} alt="cancelIcon" />
+            </button>
+            <button type="submit">
+              <img src={saveIcon} alt="saveIcon" />
+            </button>
+            <button type="button" onClick={() => handleDelete(item.key)}>
+              <img src={deleteIcon} alt="deleteIcon" />
+            </button>
+          </div>
         </form>
       ) : (
         <>
           {Object.values(item)[1]}
           <button type="button" onClick={() => setIsEditing(true)}>
-            Edit
+            <img src={editIcon} alt="editIcon" />
           </button>
         </>
       )}

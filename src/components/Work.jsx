@@ -47,7 +47,7 @@ export default function Work({ experience, setExperience }) {
   }
 
   return (
-    <>
+    <div className="section">
       <h3>Experience</h3>
       {showMenu ? (
         <form onSubmit={handleAdd}>
@@ -61,20 +61,21 @@ export default function Work({ experience, setExperience }) {
               </div>
             );
           })}
-
-          <button type="submit">Save</button>
-          <button type="button" onClick={(e) => setShowMenu(false)}>
-            Back
-          </button>
+          <div className="qol">
+            <button type="submit">Save</button>
+            <button type="button" onClick={(e) => setShowMenu(false)}>
+              Back
+            </button>
+          </div>
         </form>
       ) : (
         <>
           <ItemList itemList={experience} handleEdit={handleEdit} handleDelete={handleDelete} />
-          <button type="button" onClick={(e) => setShowMenu(true)}>
+          <button type="button" className="addBtn" onClick={(e) => setShowMenu(true)}>
             Add
           </button>
         </>
       )}
-    </>
+    </div>
   );
 }

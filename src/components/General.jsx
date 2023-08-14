@@ -13,8 +13,8 @@ export default function GeneralInformation({ general, setGeneral }) {
     });
   }
   return (
-    <form className="generalInfo">
-      <p>Personal Details</p>
+    <form className="section">
+      <h3>Personal Details</h3>
       {data.map((o) => {
         return (
           <div key={o.key}>

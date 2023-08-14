@@ -38,19 +38,21 @@ function App() {
     <>
       <h1>CV Builder</h1>
       <div className="container">
-        <div>
+        <div className="userInput">
+          <div className="qol">
+            <button className="reset" onClick={handleReset}>
+              Reset
+            </button>
+            <button className="example" onClick={handleExample}>
+              Example
+            </button>
+          </div>
           <GeneralInformation general={general} setGeneral={setGeneral} />
           <Education education={education} setEducation={setEducation} />
           <Work experience={experience} setExperience={setExperience} />
         </div>
         <PreviewCV general={general} education={education} experience={experience} />
       </div>
-      <button className="reset" onClick={handleReset}>
-        Reset
-      </button>
-      <button className="example" onClick={handleExample}>
-        Example
-      </button>
     </>
   );
 }
