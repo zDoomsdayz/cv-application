@@ -10,6 +10,7 @@ export default function Education({ education, setEducation }) {
     { key: 2, name: "startDate", label: "Start Date", placeholder: "Enter Start Date", required: true },
     { key: 3, name: "endDate", label: "End Date", placeholder: "Enter End Date", required: true },
     { key: 4, name: "location", label: "Location", placeholder: "Enter Location", required: true },
+    { key: 5, name: "description", label: "Description", placeholder: "Enter Description", required: false },
   ];
 
   function handleAdd(e) {

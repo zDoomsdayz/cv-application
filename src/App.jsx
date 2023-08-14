@@ -6,21 +6,19 @@ import Work from "./components/Work";
 import Education from "./components/Education";
 
 function App() {
-  const generalTemp = { fullName: "Meow", email: "12@1asads.com", phone: "123456789", country: "Singapore" };
+  const generalTemp = { fullName: "Whiskers McFluffy", email: "whiskers@meowmail.com", phone: "(+65) 12345678", country: "Singapore" };
   const educationTemp = [
-    { key: 0, school: "adsdkljas", degree: "afdadfs", startDate: "12", endDate: "54", location: "a" },
-    { key: 1, school: "efdssdfafsf", degree: "weqeqewq", startDate: "32", endDate: "55", location: "b" },
-    { key: 2, school: "bvnnbvnbv", degree: "zxczxczc", startDate: "43", endDate: "23", location: "c" },
+    { key: 0, school: "Whisker Academy", degree: "Master's in Feline Fine Arts", startDate: "May 2018", endDate: "Dec 2021", location: "Singapore", description: `Attended advanced classes in synchronized stretching, interpretive cardboard boxing, and the history of ancient Egyptian cat worship. Completed a thesis on "The Aesthetics of Knocking Things Off Counters: A Study in Gravity and Acoustics."` },
+    { key: 1, school: "Kitty University", degree: "Bachelor's in Purr-formance Arts", startDate: "Jan 2014", endDate: "Apr 2018", location: "Singapore", description: `Enthusiastic participant in interpretive tail-flicking classes, aerial mouse chasing, and advanced sunbeam basking studies. Completed a thesis on "The Melodic Effects of Midnight Serenades."` },
   ];
 
   const experienceTemp = [
-    { key: 0, companyName: "ABC", positionTitle: "afdadfs", startDate: "12", endDate: "54", location: "a", description: "njkjnds jnka" },
-    { key: 1, companyName: "DEF", positionTitle: "weqeqewq", startDate: "32", endDate: "55", location: "b", description: "jnkjknjknas d" },
-    { key: 2, companyName: "GHI", positionTitle: "zxczxczc", startDate: "43", endDate: "23", location: "c", description: "njiklnwqklwq" },
+    { key: 0, companyName: "Feline Delights Inc.", positionTitle: "Chief Napping Officer (CNO)", startDate: "Sept 2022", endDate: "Present", location: "Singapore", description: "Led a team of fellow feline employees in perfecting the art of power napping. Demonstrated exceptional skills in finding the sunniest spots for snoozing, expertly kneading blankets, and mastering the art of the 180-degree flip while napping." },
+    { key: 1, companyName: "TunaTreats Co.", positionTitle: "Snack Quality Control Specialist", startDate: "Jan 2022", endDate: "Aug 2022", location: "Singapore", description: "Meticulously tasted and evaluated a wide range of tuna-flavored treats for optimal taste and crunchiness. Provided valuable feedback to humans about the treat's paw-liciousness. Expert in detecting the subtle nuances of tuna aroma." },
   ];
-  const [general, setGeneral] = useState({});
-  const [education, setEducation] = useState([]);
-  const [experience, setExperience] = useState([]);
+  const [general, setGeneral] = useState(generalTemp);
+  const [education, setEducation] = useState(educationTemp);
+  const [experience, setExperience] = useState(experienceTemp);
 
   function handleReset() {
     setGeneral({});
@@ -48,8 +46,8 @@ function App() {
             </button>
           </div>
           <GeneralInformation general={general} setGeneral={setGeneral} />
-          <Education education={education} setEducation={setEducation} />
           <Work experience={experience} setExperience={setExperience} />
+          <Education education={education} setEducation={setEducation} />
         </div>
         <PreviewCV general={general} education={education} experience={experience} />
       </div>

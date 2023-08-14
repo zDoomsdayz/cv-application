@@ -57,7 +57,8 @@ export default function Work({ experience, setExperience }) {
                 <div>
                   <label htmlFor={o.name}>{o.label}</label>
                 </div>
-                <input id={o.name} name={o.name} placeholder={o.placeholder} required={o.required} />
+                {console.log("lg", o.name)}
+                {o.name == "description" ? <textarea rows="10" cols="25" id={o.name} name={o.name} placeholder={o.placeholder} /> : <input id={o.name} name={o.name} placeholder={o.placeholder} required={o.required} />}
               </div>
             );
           })}

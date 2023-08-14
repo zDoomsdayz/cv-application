@@ -48,9 +48,7 @@ function Item({ item, handleEdit, handleDelete }) {
               key != "key" && (
                 <div key={key}>
                   <label htmlFor={key}>{camelToTitleCase(key)}</label>
-                  <div>
-                    <input id={key} value={updatedItem[key]} onChange={(e) => handleInputChange(key, e.target.value)} />
-                  </div>
+                  <div>{key == "description" ? <textarea rows="10" id={key} value={updatedItem[key]} onChange={(e) => handleInputChange(key, e.target.value)} /> : <input id={key} value={updatedItem[key]} onChange={(e) => handleInputChange(key, e.target.value)} />}</div>
                 </div>
               )
           )}
